@@ -1,4 +1,4 @@
-package com.io.fast.modules.user.domain;
+package com.io.fast.modules.menu.domain;
 
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;

@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotations.TableName;
 import com.baomidou.mybatisplus.enums.FieldStrategy;
 import com.google.common.collect.Sets;
 import com.io.fast.common.base.DataDomain;
+import com.io.fast.modules.menu.domain.MenuDomain;
 
 import java.util.Set;
 

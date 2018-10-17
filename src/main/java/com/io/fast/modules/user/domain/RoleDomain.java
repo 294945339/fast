@@ -3,6 +3,7 @@ package com.io.fast.modules.user.domain;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.io.fast.common.base.DataDomain;
+import com.io.fast.modules.menu.domain.MenuDomain;
 
 import java.util.Set;
 
