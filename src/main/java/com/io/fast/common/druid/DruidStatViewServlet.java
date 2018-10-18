@@ -1,4 +1,4 @@
-package com.io.fast.druid;
+package com.io.fast.common.druid;
 
 import com.alibaba.druid.support.http.StatViewServlet;
 
