@@ -19,7 +19,11 @@ public class DruidDBConfig {
         reg.setServlet(new StatViewServlet());
         reg.addUrlMappings("/druid/*");
         //reg.addInitParameter("allow", "127.0.0.1"); //白名单
-        reg.addInitParameter("resetEnable", "false");
+        //登录查看信息的账号密码, 用于登录Druid监控后台
+        reg.addInitParameter("loginUsername", "admin");
+        reg.addInitParameter("loginPassword", "admin");
+        //是否能够重置数据.
+        reg.addInitParameter("resetEnable", "true");
         return reg;
     }
 

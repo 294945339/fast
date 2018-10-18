@@ -1,9 +1,12 @@
 #公共配置
 server:
-  port: 8080
+  port: 8085
   tomcat:
     uri-encoding: UTF-8
-
+#日志
+logging:
+  config: classpath:log/logback.xml
+  path: /home/log/fast
 spring:
   #激活哪一个环境的配置文件
   profiles:
