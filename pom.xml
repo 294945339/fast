@@ -24,13 +24,14 @@
         <java.version>1.8</java.version>
 
         <druid.version>1.1.9</druid.version>
-        <hutool-all.version>4.1.17</hutool-all.version>
+        <hutool-all.version>4.1.18</hutool-all.version>
         <guava.version>17.0</guava.version>
         <mybatisplus-spring-boot-starter.version>1.0.5</mybatisplus-spring-boot-starter.version>
         <mybatisplus.version>2.1.4</mybatisplus.version>
         <fastjson.version>1.2.41</fastjson.version>
         <commons-lang3.version>3.4</commons-lang3.version>
         <commons.io.version>2.5</commons.io.version>
+        <mybatis-plus-boot-starter.version>2.2.0</mybatis-plus-boot-starter.version>
     </properties>
 
     <repositories>
@@ -42,6 +43,7 @@
 
     <dependencies>
 
+        <!-- java工具类 -->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
@@ -55,6 +57,14 @@
             <version>${guava.version}</version>
         </dependency>
 
+        <!-- 阿里巴巴json工具 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
+        <!--apache工具组件-->
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
@@ -73,38 +83,57 @@
             <version>${commons-lang3.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-            <version>${druid.version}</version>
-        </dependency>
-
+        <!--thymeleaf-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
-        </dependency>
+
+        <!--权限管控-->
+
+        <!--cache 缓存-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+
+        <!-- ehcache缓存 -->
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>2.9.1</version><!--$NO-MVN-MAN-VER$ -->
         </dependency>
 
         <!--不需要添加 Mybatis及Mybatis-Spring依赖，Mybatis-Plus会自动维护-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>2.2.0</version>
+            <version>${mybatis-plus-boot-starter.version}</version>
+        </dependency>
+
+        <!--mysql-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!--druid数据库连接-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+
+        <!--spring-boot 核心-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

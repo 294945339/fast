@@ -10,4 +10,11 @@ import com.io.fast.modules.user.domain.UserDomain;
  */
 public interface UserService extends IService<UserDomain> {
 
+    /**
+     * 根据登录名查询用户
+     *
+     * @param loginName 登录名
+     * @return
+     */
+    UserDomain getUserByLoginName(String loginName);
 }

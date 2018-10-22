@@ -1,8 +1,11 @@
 package com.io.fast.modules.user.service.impl;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.google.common.collect.Maps;
 import com.io.fast.common.utils.ToolUtil;
+import com.io.fast.modules.menu.domain.MenuDomain;
 import com.io.fast.modules.user.dao.UserDao;
 import com.io.fast.modules.user.domain.UserDomain;
 import com.io.fast.modules.user.service.UserService;
@@ -10,6 +13,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -31,10 +35,14 @@ public class UserServiceImpl extends ServiceImpl<UserDao, UserDomain> implements
         return findUserById(user.getId());
     }
 
-    @Cacheable(value = "user",key="'user_id_'+T(String).valueOf(#id)",unless = "#result == null")
     public UserDomain findUserById(Long id) {
-        Map<String,Object> map = Maps.newHashMap();
-        map.put("id", id);
-        return baseMapper.selectUserByMap(map);
+        return baseMapper.selectById(id);
+    }
+
+    @Override
+    public UserDomain getUserByLoginName(String loginName) {
+        return baseMapper.selectOne(new UserDomain() {{
+            setLoginName(loginName);
+        }});
     }
 }
