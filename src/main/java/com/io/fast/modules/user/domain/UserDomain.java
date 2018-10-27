@@ -4,10 +4,10 @@ import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.baomidou.mybatisplus.enums.FieldStrategy;
-import com.google.common.collect.Sets;
 import com.io.fast.common.base.DataDomain;
 import com.io.fast.modules.menu.domain.MenuDomain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -57,10 +57,10 @@ public class UserDomain extends DataDomain<UserDomain> {
     private String icon;
 
     @TableField(exist=false)
-    private Set<RoleDomain> roleLists = Sets.newHashSet();
+    private Set<RoleDomain> roleLists = new HashSet<>();
 
     @TableField(exist = false)
-    private Set<MenuDomain> menus = Sets.newHashSet();
+    private Set<MenuDomain> menus = new HashSet<>();
 
     public String getLoginName() {
         return loginName;

@@ -64,7 +64,10 @@ spring:
       content-type: text/html
     check-template-location: true
     cache: false
-
+  cache:
+    caffeine:
+      spec: maximumSize=500,expireAfterWrite=5s
+    type: caffeine
 security:
 
 

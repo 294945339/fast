@@ -1,11 +1,7 @@
 package com.io.fast.modules.user.service.impl;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.google.common.collect.Maps;
 import com.io.fast.common.utils.ToolUtil;
-import com.io.fast.modules.menu.domain.MenuDomain;
 import com.io.fast.modules.user.dao.UserDao;
 import com.io.fast.modules.user.domain.UserDomain;
 import com.io.fast.modules.user.service.UserService;
@@ -13,8 +9,6 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Map;
 
 /**
  * @author: dj
@@ -40,7 +34,9 @@ public class UserServiceImpl extends ServiceImpl<UserDao, UserDomain> implements
     }
 
     @Override
+    @Cacheable(value = "user", key = "'user'.concat(#loginName)")
     public UserDomain getUserByLoginName(String loginName) {
+        System.out.println("------------------------->come on");
         return baseMapper.selectOne(new UserDomain() {{
             setLoginName(loginName);
         }});
