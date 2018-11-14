@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.enums.FieldStrategy;
 import com.io.fast.common.base.TreeDomain;
 import org.hibernate.validator.constraints.Length;
 
+import java.util.Objects;
+
 /**
  * @author: dj
  * @Date: 2018\10\15 0015 14:33
@@ -113,5 +115,27 @@ public class MenuDomain extends TreeDomain<MenuDomain> {
 
     public void setDataCount(Integer dataCount) {
         this.dataCount = dataCount;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
+        MenuDomain that = (MenuDomain) o;
+        return Objects.equals(name, that.name) &&
+                Objects.equals(icon, that.icon) &&
+                Objects.equals(href, that.href);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, icon, href);
     }
 }

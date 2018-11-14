@@ -2,6 +2,7 @@ package com.io.fast.modules.sys.login.web;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -12,6 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/login")
 public class LoginController {
+
+    @RequestMapping("/hello")
+    @ResponseBody
+    public String hello(){
+        return "hello";
+    }
 
     @RequestMapping("/login.html")
     public String login() {

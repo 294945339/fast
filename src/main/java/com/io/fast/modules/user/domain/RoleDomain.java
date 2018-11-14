@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotations.TableName;
 import com.io.fast.common.base.DataDomain;
 import com.io.fast.modules.menu.domain.MenuDomain;
 
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -54,5 +55,25 @@ public class RoleDomain extends DataDomain<RoleDomain> {
 
 	public void setUserSet(Set<UserDomain> userSet) {
 		this.userSet = userSet;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		if (!super.equals(o)) {
+			return false;
+		}
+		RoleDomain that = (RoleDomain) o;
+		return Objects.equals(name, that.name);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(name);
 	}
 }

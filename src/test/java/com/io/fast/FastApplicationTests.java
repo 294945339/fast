@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
@@ -38,10 +39,10 @@ public class FastApplicationTests {
 
 //        EntityWrapper<MenuDomain> ew = new EntityWrapper<>();
 //        ew.where("level = 1");
-        UserDomain user1 = userService.getUserByLoginName("test");
-        System.out.println(user1.getNickName());
-        UserDomain user2 = userService.getUserByLoginName("test");
-        System.out.println(user2.getNickName());
+        UserDetails user1 = userService.getUserByLoginName("test");
+        System.out.println(user1.getUsername());
+//        UserDomain user2 = userService.getUserByLoginName("test");
+//        System.out.println(user2.getNickName());
 
         //        System.out.println(user.getNickName());
 //        System.out.println(JSON.toJSON(menuService.selectList(ew)));

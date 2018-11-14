@@ -5,7 +5,7 @@ server:
     max-threads: 1000
     min-spare-threads: 30
   port: 8085
-  connection-timeout: 5000ms
+  connection-timeout: 5000
   servlet:
     context-path: /fast
 

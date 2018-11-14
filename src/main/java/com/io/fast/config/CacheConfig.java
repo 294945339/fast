@@ -47,9 +47,13 @@ public class CacheConfig {
             this.maxSize = maxSize;
         }
 
-        //最大數量
+        /**
+         * 最大數量
+         */
         private int maxSize = DEFAULT_MAXSIZE;
-        //过期时间（秒）
+        /**
+         * 过期时间（秒）
+         */
         private int ttl = DEFAULT_TTL;
 
         public int getMaxSize() {

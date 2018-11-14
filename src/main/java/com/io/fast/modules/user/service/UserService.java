@@ -2,6 +2,7 @@ package com.io.fast.modules.user.service;
 
 import com.baomidou.mybatisplus.service.IService;
 import com.io.fast.modules.user.domain.UserDomain;
+import org.springframework.security.core.userdetails.UserDetails;
 
 /**
  * @author: dj
